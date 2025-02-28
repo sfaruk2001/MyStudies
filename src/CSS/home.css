@@ -14,10 +14,81 @@ body {
     align-items: center;
 }
 
+.logo {
+    margin-left: 20px;
+    font-size: 1.5rem;
+}
+
 .nav-links {
     display: flex;
+    margin-right: 20px;
+    gap: 10px;
 }
 
 .deck-body {
     border: 1px solid blue;
+    display: grid;
+    grid-template-rows: 1fr 10fr;
+}
+
+.myDeck-header {
+    font-size: 2rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin-top: 20px;
+}
+
+.myDeck-dashboard {
+    border: 1px solid green;
+    margin-top: 20px;
+    padding: 30px;
+}
+
+.tabs {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.tab-label {
+    margin-right: 10px;
+}
+
+.tab-filter {
+    width: 80px;
+    height: 30px;
+}
+
+.decks {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border: 1px solid purple;
+}
+
+.deck {
+    border: 1px solid black;
+    display: grid;
+    grid-template-rows: 1fr 5fr;
+}
+
+.deck-head {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid black;
+}
+
+.deck-features {
+    display: flex;
+    flex-direction: column;
+}
+
+.games {
+    display: flex;
+    
+}
+
+.quiz, .match {
+    flex-grow: 1;
 }
