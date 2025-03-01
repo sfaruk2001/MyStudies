@@ -95,6 +95,10 @@ body {
     padding: 5px;
 }
 
+.close-button {
+    margin-right: 5px;
+}
+
 .games {
     display: flex;
     flex-grow: 1;

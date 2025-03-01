@@ -1,0 +1,44 @@
+body {
+    display: grid;
+    grid-template-rows: 1fr 6fr;
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+}
+
+.header {
+    border: 1px solid red;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+}
+
+.logo {
+    margin-left: 20px;
+    font-size: 1.5rem;
+}
+
+.nav-links {
+    display: flex;
+    margin-right: 20px;
+    gap: 10px;
+}
+
+.about-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.about-header {
+    font-size: 2rem;
+    margin-bottom: 20px;
+
+}
+
+.about-container {
+    border: 1px solid black;
+    padding: 10px;
+    width: 700px;
+}
