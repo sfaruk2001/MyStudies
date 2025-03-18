@@ -1,3 +1,26 @@
+:root {
+    --main-color: rgb(42, 166, 229);
+}
+
+.old-standard-tt-regular {
+    font-family: "Old Standard TT", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .old-standard-tt-bold {
+    font-family: "Old Standard TT", serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  .old-standard-tt-regular-italic {
+    font-family: "Old Standard TT", serif;
+    font-weight: 400;
+    font-style: italic;
+  }
+  
+
 body {
     display: grid;
     grid-template-rows: 1fr 6fr;
@@ -7,11 +30,13 @@ body {
 }
 
 .header {
-    border: 1px solid red;
+    /**border: 1px solid red;*/
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 80px;
+    background-color: var(--main-color);
+    color: white;
 }
 
 .logo {
@@ -25,6 +50,11 @@ body {
     gap: 10px;
 }
 
+a {
+    text-decoration: none;
+    color: white;
+}
+
 .about-body {
     display: flex;
     flex-direction: column;
@@ -34,7 +64,7 @@ body {
 .about-header {
     font-size: 2rem;
     margin-bottom: 20px;
-
+    font-family: 'Old Standard TT';
 }
 
 .about-container {
