@@ -1,3 +1,25 @@
+:root {
+    --main-color: rgb(42, 166, 229);
+}
+
+.old-standard-tt-regular {
+    font-family: "Old Standard TT", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .old-standard-tt-bold {
+    font-family: "Old Standard TT", serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  .old-standard-tt-regular-italic {
+    font-family: "Old Standard TT", serif;
+    font-weight: 400;
+    font-style: italic;
+  }
+
 body {
     display: grid;
     grid-template-rows: 1fr 6fr;
@@ -7,11 +29,13 @@ body {
 }
 
 .header {
-    border: 1px solid red;
+    /**border: 1px solid red;*/
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 80px;
+    background-color: var(--main-color);
+    color: white;
 }
 
 .logo {
@@ -23,6 +47,11 @@ body {
     display: flex;
     margin-right: 20px;
     gap: 10px;
+} 
+
+a {
+    color: white;
+    text-decoration: none;
 }
 
 .myBulletin-header {
@@ -34,6 +63,10 @@ body {
     margin-top: 10px;
 }
 
+.bulletin-title {
+    font-family: 'Old Standard TT';
+}
+
 .myBulletin-body {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -41,7 +74,18 @@ body {
     margin-top: 20px;
     padding: 20px;
     gap: 10px;
-   
+}
+
+.add-post {
+    background-color: white;
+    border: 1px solid rgb(18, 197, 18);
+    height: 40px;
+    width: 40px;
+}
+
+.add-post:hover {
+    background-color: rgb(18, 197, 18);
+    color: white;
 }
 
 .post {
@@ -57,9 +101,33 @@ body {
     align-items: center;
     border-bottom: 1px solid black;
     padding: 5px;
+    background-color: var(--main-color);
+    color: white;
 }
 
 .post-body {
     padding: 5px;
     overflow: scroll;
+}
+
+.post-edit {
+    background-color: white;
+    border: orange 1px solid;
+    color: orange;
+}
+
+.post-edit:hover {
+    background-color: orange;
+    color: white;
+}
+
+.post-close {
+    background-color: white;
+    border: red 1px solid;
+    color: red;
+}
+
+.post-close:hover {
+    background-color: red;
+    color: white;
 }
