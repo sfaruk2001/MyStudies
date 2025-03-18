@@ -1,3 +1,26 @@
+:root {
+    --main-color: rgb(42, 166, 229);
+}
+
+.old-standard-tt-regular {
+    font-family: "Old Standard TT", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .old-standard-tt-bold {
+    font-family: "Old Standard TT", serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  .old-standard-tt-regular-italic {
+    font-family: "Old Standard TT", serif;
+    font-weight: 400;
+    font-style: italic;
+  }
+  
+
 body {
     display: grid;
     grid-template-rows: 1fr 6fr;
@@ -7,22 +30,46 @@ body {
 }
 
 .header {
-    border: 1px solid red;
+    /**border: 1px solid red;*/
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 80px;
+    background-color: var(--main-color);
+    color: white;
 }
 
 .logo {
     margin-left: 20px;
     font-size: 1.5rem;
+
 }
 
 .nav-links {
     display: flex;
     margin-right: 20px;
     gap: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.edit-profile {
+    background-color: white;
+    border: 1px solid rgb(18, 197, 18);
+    height: 40px;
+    width: 40px;
+}
+
+.edit-profile:hover {
+    background-color: rgb(18, 197, 18);
+    color: white;
+}
+
+.profile-title {
+    font-family: 'Old Standard TT';
 }
 
 .myProfile-body {
