@@ -1,3 +1,25 @@
+:root {
+    --main-color: rgb(42, 166, 229);
+
+}
+.old-standard-tt-regular {
+    font-family: "Old Standard TT", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .old-standard-tt-bold {
+    font-family: "Old Standard TT", serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  .old-standard-tt-regular-italic {
+    font-family: "Old Standard TT", serif;
+    font-weight: 400;
+    font-style: italic;
+  }
+  
 
 body {
     display: grid;
@@ -6,15 +28,17 @@ body {
     height: 100vh;
     width: 100vw;
     font-family:'Times New Roman', Times, serif;
+    
 }
 
 .header {
-    border: 1px solid red;
+    /**border: 1px solid red;*/
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 80px;
-    background-color: rgb(152, 125, 197);
+    background-color: var(--main-color);
+    color: white;
 }
 
 .logo {
@@ -30,11 +54,11 @@ body {
 
 a {
     text-decoration: none;
-    color: black
+    color: white;
 }
 
 .deck-body {
-    border: 1px solid blue;
+    /**border: 1px solid blue;*/
     display: grid;
     grid-template-rows: 1fr 10fr;
     
@@ -42,16 +66,34 @@ a {
 
 .myDeck-header {
     font-size: 2rem;
+    font-family: "Old Standard TT";
     text-align: center;
     display: flex;
     justify-content: center;
     gap: 5px;
     margin-top: 20px;
+    color: var(--main-color);
+}
+
+.MyDecks-title {
+    color: black;
+}
+
+.add-deck {
+    background-color: white;
+    border: 1px solid rgb(18, 197, 18);
+    height: 40px;
+    width: 40px;
+}
+
+.add-deck:hover {
+    background-color: rgb(18, 197, 18);
+    color: white;
 }
 
 .myDeck-dashboard {
-    border: 1px solid green;
-    margin-top: 20px;
+    /**border: 1px solid green;*/
+    margin-top: 0px;
     padding: 30px;
 }
 
@@ -68,6 +110,12 @@ a {
 .tab-filter {
     width: 80px;
     height: 30px;
+    background-color: white;
+    border: 1px var(--main-color) solid;
+}
+
+.tab-filter:hover {
+    background-color: var(--main-color);
 }
 
 .decks {
@@ -90,6 +138,8 @@ a {
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid black;
+    background-color: var(--main-color);
+    color: white;
 }
 
 .head-title {
@@ -103,8 +153,53 @@ a {
     padding: 5px;
 }
 
+.track-button {
+    background-color: white;
+    border: 1px solid grey;
+    color: teal;
+}
+
+.track-button:hover {
+    background-color: teal;
+    color: white;
+}
+
 .close-button {
     margin-right: 5px;
+    background-color: white;
+    border: 1px solid grey;
+    color: red;
+}
+
+.close-button:hover {
+    background-color: red;
+    color: white;
+}
+
+.edit {
+    background-color: white;
+    border: 1px solid orange;
+    color: orange;
+}
+
+.edit:hover {
+    background-color: orange;
+    color: white;
+}
+
+.fav {
+    background-color: white;
+    border: 1px solid purple;
+    color: purple;
+}
+
+.fav:hover {
+    background-color: purple;
+    color: white;
+} 
+
+.edit, .fav {
+    height: 60px;
 }
 
 .games {
@@ -115,6 +210,28 @@ a {
 
 .quiz, .match {
    flex-grow: 1;
+}
+
+.quiz {
+    background-color: white;
+    border: 1px solid blue;
+    color: blue;
+}
+
+.quiz:hover {
+    background-color: blue;
+    color: white;
+}
+
+.match {
+    background-color: white;
+    border: 1px solid gold;
+    color: gold;
+}
+
+.match:hover {
+    background-color: gold;
+    color: white;
 }
 
 
