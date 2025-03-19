@@ -1,0 +1,73 @@
+import Post from '../JS/post.js'
+
+let bulletinBoard = [];
+
+let p1 = new Post("Post 1", "This is a random description");
+let p2 = new Post("Post 2", "This another random description");
+let p3 = new Post("Post 3", "This is the third random description");
+addPost(p1);
+addPost(p2);
+addPost(p3);
+displayBulletin();
+console.log(bulletinBoard);
+
+function addPost(post) {
+    bulletinBoard.push(post);
+}
+
+function displayBulletin() {
+    for (let i  = 0; i < bulletinBoard.length; i++) {
+        let bulletin = document.querySelector('.myBulletin-body');
+
+        let post = document.createElement('div');
+        post.classList.add('post');
+        post.classList.add('data-idx');
+        post.setAttribute('data-idx', i);
+
+        let postHead = document.createElement('div');
+        postHead.classList.add('post-head');
+
+        let postTitle = document.createElement('div');
+        postTitle.classList.add('post-title');
+        postTitle.innerText = bulletinBoard[i].getTitle();
+
+        let postButtons = document.createElement('div');
+        postButtons.classList.add('post-buttons');
+
+        let postEdit = document.createElement('button');
+        postEdit.classList.add('post-edit');
+        postEdit.innerText = 'Edit';
+        //add event listener for edit
+
+        let postClose = document.createElement('button');
+        postClose.classList.add('post-close');
+        postClose.innerText = 'X';
+        postClose.addEventListener('click', (e) => {
+            let idx = Number(e.target.parentElement.dataset.idx);
+            bulletinBoard.splice(idx, 1);
+            bulletin.innerHTML = '';
+            displayBulletin();
+            
+        });
+        //add event listener for delete
+
+        let postBody = document.createElement('div');
+        postBody.classList.add('post-body');
+        postBody.innerText = bulletinBoard[i].getContent();
+
+        postButtons.appendChild(postEdit);
+        postButtons.appendChild(postClose);
+        postHead.appendChild(postTitle);
+        postHead.appendChild(postButtons);
+        post.appendChild(postHead);
+        post.appendChild(postBody);
+
+        bulletin.appendChild(post);
+
+    }
+}
+
+
+
+
+
