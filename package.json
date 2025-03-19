@@ -1,0 +1,15 @@
+{
+  "name": "mystudies",
+  "version": "1.0.0",
+  "description": "This is my CISC 4900 Project. I will attempt to create a website where students can log in and create/review flashcard decks, sticky notes, have access to a personal bulletin, and profile. This is my first attempt at trying something fullstack.",
+  "main": "index.js",
+  "dependencies": {
+    "uuid": "^11.1.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
