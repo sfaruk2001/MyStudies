@@ -9,7 +9,35 @@ addPost(p1);
 addPost(p2);
 addPost(p3);
 displayBulletin();
-console.log(bulletinBoard);
+
+let modal = document.querySelector('.modal');
+let form = document.querySelector('.form');
+let addPostButton = document.querySelector('.add-post');
+let submitPost = document.querySelector('.sub-form');
+
+addPostButton.addEventListener('click', () => {
+  modal.showModal();
+});
+
+submitPost.addEventListener('click', (e) => {
+  let bulletin = document.querySelector('.myBulletin-body');
+  let title = document.querySelector('#title').value;
+  let body = document.querySelector('#body').value;
+
+  //Prevents user from submitting books without title and body
+  if(title === "" || body === "") {
+
+  } else {
+    let p = new Post(title, body);
+    console.log(p);
+    addPost(p);
+    bulletin.innerHTML = "";
+    displayBulletin();
+    form.reset();
+    modal.close();
+  }
+
+});
 
 function addPost(post) {
     bulletinBoard.push(post);
