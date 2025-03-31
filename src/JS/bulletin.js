@@ -24,6 +24,8 @@ submitPost.addEventListener('click', (e) => {
   let title = document.querySelector('#title').value;
   let body = document.querySelector('#body').value;
 
+  
+
   //Prevents user from submitting books without title and body
   if(title === "" || body === "") {
 
@@ -40,7 +42,12 @@ submitPost.addEventListener('click', (e) => {
 });
 
 function addPost(post) {
-    bulletinBoard.push(post);
+  bulletinBoard.push(post);
+}
+
+function editPost(idx, title, content) {
+  bulletinBoard[idx].setTitle(title);
+  bulletinBoard[idx].setContent(content);
 }
 
 function displayBulletin() {
@@ -66,18 +73,48 @@ function displayBulletin() {
         postEdit.classList.add('post-edit');
         postEdit.innerText = 'Edit';
         //add event listener for edit
+        postEdit.addEventListener('click', (e) => {
+          let editModal = document.querySelector('.edit-modal');
+          let editForm = document.querySelector('.edit-form');
+          let submitEditedPost = document.querySelector('.sub-edit-form');
+
+          let idx = Number(e.target.parentElement.parentElement.parentElement.dataset.idx);
+          console.log(idx);
+          editModal.showModal();
+          /**   
+          submitEditedPost.addEventListener('click', (idx) => {
+            let bulletin = document.querySelector('.myBulletin-body');
+            let title = document.querySelector('#edit-title').value;
+            let body = document.querySelector('#edit-body').value;
+            console.log(idx);
+            console.log(title);
+            console.log(body);
+          
+           //Prevents user from submitting books without title and body
+            bulletinBoard[idx].setTitle(title);
+            bulletinBoard[idx].setContent(body);
+            bulletin.innerHTML = "";
+            displayBulletin();
+            editForm.reset();
+            editModal.close();
+            
+          })*/    
+        })
+
+       
 
         let postClose = document.createElement('button');
         postClose.classList.add('post-close');
         postClose.innerText = 'X';
+        //add event listener for delete
         postClose.addEventListener('click', (e) => {
-            let idx = Number(e.target.parentElement.dataset.idx);
+            let idx = Number(e.target.parentElement.parentElement.parentElement.dataset.idx);
             bulletinBoard.splice(idx, 1);
             bulletin.innerHTML = '';
             displayBulletin();
             
         });
-        //add event listener for delete
+        
 
         let postBody = document.createElement('div');
         postBody.classList.add('post-body');
@@ -94,6 +131,14 @@ function displayBulletin() {
 
     }
 }
+
+
+
+
+
+
+
+
 
 
 
