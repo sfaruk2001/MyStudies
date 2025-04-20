@@ -8,8 +8,20 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap');
     </style>
+    <script src="../JS/profilePage.js" type="module" defer></script>
 </head>
 <body>
+    <dialog class="modal">
+        <h1>Profile</h1>
+        <form action="" class="form" method="dialog">
+            <label for="name">Name</label><input type="text" id="name" required>
+            <label for="age">Age</label><input type="text" id="age" required>
+            <label for="gender">Gender</label><input type="text" id="gender" required>
+            <label for="institution">Institution</label><input type="text" id="institution" required>
+            <label for="about">about</label><textarea id="about" name="about-me" rows="5" cols="33" required></textarea>
+            <button type="submit" class="sub-form">Submit</button>
+        </form>
+    </dialog>
     <div class="header">
         <a href="../HTML/index.html">
             <div class="logo">MyStudies</div>

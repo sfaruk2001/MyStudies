@@ -1,5 +1,5 @@
 
-export default class Profile {
+export class Profile {
     constructor(name, age, gender, institution, aboutMe) {
         this.name = name;
         this.age = age;
