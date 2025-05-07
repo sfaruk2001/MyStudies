@@ -13,8 +13,34 @@ editProfile.addEventListener('click', () => {
     modal.showModal();
 });
 
+submitPost.addEventListener('click', () => {
+    let nameInput = document.querySelector('#name').value;
+    let ageInput = document.querySelector('#age').value;
+    let genderInput = document.querySelector('#gender').value;
+    let institutionInput = document.querySelector('#institution').value;
+    let aboutInput = document.querySelector('#about').value;
 
-/** 
-function displayProfile() {
+    if (nameInput === '' || ageInput === '' || genderInput === '' || institutionInput === '' || aboutInput === '' ) {
 
-}*/
+    } else {
+        let name = document.querySelector('.user-name');
+        name.innerText = nameInput;
+        let age = document.querySelector('.user-age');
+        age.innerText = ageInput;
+        let gender = document.querySelector('.user-gender');
+        gender.innerText = genderInput;
+        let institution = document.querySelector('.user-Institute');
+        institution.innerText = institutionInput;
+        let about = document.querySelector('.user-about');
+        about.innerText = aboutInput;
+        clearModule();
+    }
+    
+});
+
+
+
+function clearModule() {
+    form.reset();
+    modal.close();
+}
