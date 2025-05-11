@@ -1,9 +1,9 @@
 
-export default class flashcard {
+export default class Flashcard {
     constructor(term, definition) {
         this.term = term;
         this.definition = definition;
-        this.cardId = this.uuidv4;
+        this.cardId = this.uuidv4();
     }
 
     getTerm() {
@@ -20,6 +20,10 @@ export default class flashcard {
 
     setDefinition(newDef) {
         this.definition = newDef;
+    }
+
+    getId() {
+        return this.cardId;
     }
 
     uuidv4() {
