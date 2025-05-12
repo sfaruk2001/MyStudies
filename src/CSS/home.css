@@ -19,7 +19,23 @@
     font-weight: 400;
     font-style: italic;
   }
-  
+
+.modal {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.in {
+    display: flex;
+    gap: 10px;
+}
 
 body {
     display: grid;

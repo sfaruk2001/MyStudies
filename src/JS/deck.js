@@ -23,6 +23,14 @@ export default class Deck {
         this.cards.push(newCard);
     }
 
+    getFlashCard(cardId) {
+        for (let i = 0; i < this.cards.length; i++) {
+            if (cardId === this.cards[i].getId()) {
+                return this.cards[i];
+            }
+        }
+    }
+
     getDeckId() {
         return this.deckId;
     }
