@@ -1,0 +1,48 @@
+:root {
+    --main-color: rgb(42, 166, 229);
+
+}
+.old-standard-tt-regular {
+    font-family: "Old Standard TT", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .old-standard-tt-bold {
+    font-family: "Old Standard TT", serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  .old-standard-tt-regular-italic {
+    font-family: "Old Standard TT", serif;
+    font-weight: 400;
+    font-style: italic;
+  }
+
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .login {
+    margin-top: 100px;
+    border: 2px solid rgb(42, 166, 229);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 500px;
+    height: 300px;
+  }
+
+  button {
+    height: 50px;
+    width: 90px;
+    background-color: rgb(42, 166, 229);
+    color: white;
+    padding: 5px;
+    align-self: center;
+  }
