@@ -112,6 +112,12 @@ function displayDashboard() {
         let closeButton = document.createElement('button');
         closeButton.classList.add('close-button');
         closeButton.innerText = 'X';
+        closeButton.addEventListener('click', (e) => {
+            let idx = Number(e.target.parentElement.parentElement.parentElement.dataset.idx);
+            dashboard.splice(idx, 1);
+            dash.innerHTML = '';
+            displayBulletin();
+        });
 
         let deckFeatures = document.createElement('div');
         deckFeatures.classList.add('deck-features');
