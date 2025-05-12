@@ -73,9 +73,21 @@ function getDeck(name) {
     }
 }
 
+function getDeckById(deckId) {
+    for (let i = 0; i < dashboard.length; i++) {
+        if (deckId === dashboard[i].getDeckId()) {
+            return dashboard[i];
+        }
+    }
+}
+
 function addDeck(deck) {
     dashboard.push(deck);
 } 
+
+function addDeckToFav(deck) {
+    favDecks.push(deck);
+}
 
 function deleteDeck(name) {
     dashboard.splice(dashboard.indexOf(getDeck(name)),1);
@@ -94,6 +106,8 @@ function displayDashboard() {
         deck.classList.add('deck');
         deck.classList.add('data-idx');
         deck.setAttribute('data-idx', i);
+        deck.classList.add('deck-id');
+        deck.setAttribute('deck-id',dashboard[i].getDeckId());
 
         let deckHead = document.createElement('div');
         deckHead.classList.add('deck-head');
@@ -129,6 +143,18 @@ function displayDashboard() {
         let favButton = document.createElement('button');
         favButton.classList.add('fav');
         favButton.innerText = 'Favorite';
+        /**favButton.addEventListener('click',(e)=> {
+
+            deckId = e.target.parentElement.parentElement.getAttribute('deck-id');
+            if (deckId) {
+                favButton.innerText = 'Favorite';
+                //if you find the deck in favs you remove it.
+                dashboard.splice(,1);
+            } else {
+                favButton.innerText = 'Favorited';
+
+            }
+        });*/
 
         let games = document.createElement('div');
         games.classList.add('games');
