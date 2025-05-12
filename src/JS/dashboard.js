@@ -12,6 +12,7 @@ addDeckButton.addEventListener('click', () => {
 });
 
 submitPost.addEventListener('click', () => {
+    let dash = document.querySelector('.decks');
     let title = document.querySelector('#title').value;
     let t1 = document.querySelector('#term-1').value;
     let d1 = document.querySelector('#def-1').value;
@@ -33,22 +34,30 @@ submitPost.addEventListener('click', () => {
     let d9 = document.querySelector('#def-9').value;
     let t10 = document.querySelector('#term-10').value;
     let d10 = document.querySelector('#def-10').value;
+    
+    if (title === '' || t1 === '' || d1 === '' || t2 === '' || d2 === '' || t3 === '' || d3 === '' || t4 === '' || d4 === '' || t5 === '' || d5 === '' || t6 === '' || d6 === '' || t7 === '' || d7 === '' || t8 === '' || d8 === '' || t9 === '' || d9 === '' || t10 === '' || d10 === '') {
 
-    let deck = new Deck(title);
-    deck.addFlashCard(new Flashcard(t1,d1));
-    deck.addFlashCard(new Flashcard(t2,d2));
-    deck.addFlashCard(new Flashcard(t3,d3));
-    deck.addFlashCard(new Flashcard(t4,d4));
-    deck.addFlashCard(new Flashcard(t5,d5));
-    deck.addFlashCard(new Flashcard(t6,d6));
-    deck.addFlashCard(new Flashcard(t7,d7));
-    deck.addFlashCard(new Flashcard(t8,d8));
-    deck.addFlashCard(new Flashcard(t9,d9));
-    deck.addFlashCard(new Flashcard(t10,d10));
+    } else {
+        let deck = new Deck(title);
+        deck.addFlashCard(new Flashcard(t1,d1));
+        deck.addFlashCard(new Flashcard(t2,d2));
+        deck.addFlashCard(new Flashcard(t3,d3));
+        deck.addFlashCard(new Flashcard(t4,d4));
+        deck.addFlashCard(new Flashcard(t5,d5));
+        deck.addFlashCard(new Flashcard(t6,d6));
+        deck.addFlashCard(new Flashcard(t7,d7));
+        deck.addFlashCard(new Flashcard(t8,d8));
+        deck.addFlashCard(new Flashcard(t9,d9));
+        deck.addFlashCard(new Flashcard(t10,d10));
 
-    addDeck(deck);
-    console.log(dashboard);
-    modal.close();
+        addDeck(deck);
+        console.log(dashboard);
+        dash.innerHTML = '';
+        displayDashboard();
+        form.reset();
+        modal.close();
+    }
+    
 
 });
 
@@ -78,21 +87,71 @@ function addCardToDeck(name, term, definition) {
 }*/
 
 function displayDashboard() {
-    
+    for (let i = 0; i < dashboard.length; i++) {
+        let dash = document.querySelector('.decks');
+
+        let deck = document.createElement('div');
+        deck.classList.add('deck');
+        deck.classList.add('data-idx');
+        deck.setAttribute('data-idx', i);
+
+        let deckHead = document.createElement('div');
+        deckHead.classList.add('deck-head');
+
+        let headTitle = document.createElement('div');
+        headTitle.classList.add('head-title');
+        headTitle.innerText = dashboard[i].getDeckName();
+
+        let headButtons = document.createElement('div');
+        headButtons.classList.add('head-buttons');
+
+        let trackButton = document.createElement('button');
+        trackButton.classList.add('track-button');
+        trackButton.innerText = 'Track';
+
+        let closeButton = document.createElement('button');
+        closeButton.classList.add('close-button');
+        closeButton.innerText = 'X';
+
+        let deckFeatures = document.createElement('div');
+        deckFeatures.classList.add('deck-features');
+
+        let editButton = document.createElement('button');
+        editButton.classList.add('edit');
+        editButton.innerText = 'Edit';
+
+        let favButton = document.createElement('button');
+        favButton.classList.add('fav');
+        favButton.innerText = 'Favorite';
+
+        let games = document.createElement('div');
+        games.classList.add('games');
+
+        let quizButton = document.createElement('button');
+        quizButton.classList.add('quiz');
+        quizButton.innerText = 'Quiz';
+
+        let matchButton = document.createElement('button');
+        matchButton.classList.add('match');
+        matchButton.innerText = 'Match';
+
+        headButtons.appendChild(trackButton);
+        headButtons.appendChild(closeButton);
+        deckHead.appendChild(headTitle);
+        deckHead.appendChild(headButtons);
+        games.appendChild(quizButton);
+        games.appendChild(matchButton);
+        deckFeatures.appendChild(editButton);
+        deckFeatures.appendChild(favButton);
+        deckFeatures.appendChild(games);
+        deck.appendChild(deckHead);
+        deck.appendChild(deckFeatures);
+
+        dash.appendChild(deck);
+
+    }
 }
 
-
-let deck1 = new Deck('Deck 1');
-deck1.addFlashCard(new Flashcard('Excited', 'A state of looking forward'));
-deck1.addFlashCard(new Flashcard('Depressed', 'A state of numbness and lack of enjoyment'));
-addDeck(deck1);
-
-let deck2 = new Deck('Deck 2');
-deck2.addFlashCard(new Flashcard('Mickey', 'A mouse'));
-deck2.addFlashCard(new Flashcard('Goofy', 'A dog'));
-addDeck(deck2);
-
-deleteDeck('Deck 1');
 
 console.log(dashboard);
 
